@@ -1,0 +1,7 @@
+ca-certificate
+001readme.patch
+003installer.patch
+010disabling_update_note.patch
+#011support-symlinks-for-plugins.patch
+mu.patch
+CVE-2019-17670.patch

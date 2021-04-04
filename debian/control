@@ -1,0 +1,100 @@
+Source: wordpress
+Section: web
+Priority: optional
+Maintainer: Craig Small <csmall@debian.org>
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9), dh-linktree
+Build-Depends-Indep: gettext,
+                     libjs-backbone,
+                     libjs-cropper,
+                     libjs-jquery (>= 1.6.1),
+                     libjs-jquery-form,
+                     libjs-jquery-ui (>= 1.8.1),
+                     libjs-mediaelement,
+                     libjs-prototype,
+                     libjs-scriptaculous,
+                     libjs-swfobject,
+                     libjs-underscore,
+                     libphp-phpmailer (>= 5.1),
+                     php-getid3 (>= 1.9.8-2),
+                     perl,
+                     tinymce (>= 3.4.2)
+Homepage: http://wordpress.org
+Vcs-Git: git://anonscm.debian.org/collab-maint/wordpress.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/wordpress.git
+
+Package: wordpress
+Architecture: all
+Depends: apache2 | httpd,
+         libapache2-mod-php5 | php5,
+         ca-certificates,
+         mysql-client | mariadb-client,
+         php5-gd,
+         php5-mysql | php5-mysqlnd,
+         wordpress-theme-twentyfifteen,
+         ${misc:Depends}
+Recommends: wordpress-l10n
+Suggests: mysql-server (>= 5.0.15)
+Description: weblog manager
+ WordPress is a full featured web blogging tool:
+    * Instant publishing (no rebuilding)
+    * Comment pingback support with spam protection
+    * Non-crufty URLs
+    * Themable
+    * Plugin support
+
+Package: wordpress-l10n
+Section: localization
+Architecture: all
+Depends: wordpress (= ${source:Version}), ${misc:Depends}
+Description: weblog manager - language files
+ WordPress is a full featured web blogging tool:
+    * Instant publishing (no rebuilding)
+    * Comment pingback support with spam protection
+    * Non-crufty URLs
+    * Themable
+    * Plugin support
+ This package contains WordPress language files
+
+Package: wordpress-theme-twentyfifteen
+Architecture: all
+Enhances: wordpress
+Depends: ${misc:Depends}
+Replaces: wordpress (<< 3.8+dfsg-1)
+Breaks: wordpress (<< 3.8+dfsg-1)
+Description: weblog manager - twentytfifteen theme files
+ WordPress is a full featured web blogging tool:
+    * Instant publishing (no rebuilding)
+    * Comment pingback support with spam protection
+    * Non-crufty URLs
+    * Themable
+    * Plugin support
+ This package contains WordPress twentyfifteen theme files
+
+Package: wordpress-theme-twentyfourteen
+Architecture: all
+Enhances: wordpress
+Depends: ${misc:Depends}
+Description: weblog manager - twentyfourteen theme files
+ WordPress is a full featured web blogging tool:
+    * Instant publishing (no rebuilding)
+    * Comment pingback support with spam protection
+    * Non-crufty URLs
+    * Themable
+    * Plugin support
+ This package contains WordPress twentyfourteen theme files
+
+Package: wordpress-theme-twentythirteen
+Architecture: all
+Enhances: wordpress
+Depends: ${misc:Depends}
+Replaces: wordpress (<< 3.8+dfsg-1)
+Breaks: wordpress (<< 3.8+dfsg-1)
+Description: weblog manager - twentythirteen theme files
+ WordPress is a full featured web blogging tool:
+    * Instant publishing (no rebuilding)
+    * Comment pingback support with spam protection
+    * Non-crufty URLs
+    * Themable
+    * Plugin support
+ This package contains WordPress twentythirteen theme files

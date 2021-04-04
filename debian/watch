@@ -1,0 +1,3 @@
+version=3
+opts="dversionmangle=s/\+dfsg//,uversionmangle=s/-IIS/~IIS/;s/-beta/~beta/;s/-RC/~rc/;s/mu-/~mu/" \
+https://wordpress.org/download/release-archive/ https://wordpress.org/wordpress-(.*)\.tar\.gz 

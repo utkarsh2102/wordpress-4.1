@@ -1,0 +1,33 @@
+MU for Debian installations
+--- a/wp-admin/network.php
++++ b/wp-admin/network.php
+@@ -372,17 +372,17 @@
+ 		<p><?php _e( 'Complete the following steps to enable the features for creating a network of sites.' ); ?></p>
+ 		<div class="updated inline"><p><?php
+ 			if ( file_exists( $home_path . '.htaccess' ) )
+-				printf( __( '<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> and <code>%s</code> files.' ), '.htaccess' );
++				printf( __( '<strong>Caution:</strong> We recommend you back up your existing <code>%s</code> and <code>%s</code> files.' ), DEBIAN_FILE, '/etc/wordpress/htaccess' );
+ 			elseif ( file_exists( $home_path . 'web.config' ) )
+ 				printf( __( '<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> and <code>%s</code> files.' ), 'web.config' );
+ 			else
+-				_e( '<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> file.' );
++				printf( __( '<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> and <code>%s</code> files.' ), 'web.config' );
+ 		?></p></div>
+ <?php
+ 	}
+ ?>
+ 		<ol>
+-			<li><p><?php printf( __( 'Add the following to your <code>wp-config.php</code> file in <code>%s</code> <strong>above</strong> the line reading <code>/* That&#8217;s all, stop editing! Happy blogging. */</code>:' ), $location_of_wp_config ); ?></p>
++			<li><p><?php printf( __( 'Add the following to your <code>%s</code> file <strong>above</strong> the line reading <code>/* That&#8217;s all, stop editing! Happy blogging. */</code>:' ), DEBIAN_FILE ); ?></p>
+ 				<textarea class="code" readonly="readonly" cols="100" rows="7">
+ define('MULTISITE', true);
+ define('SUBDOMAIN_INSTALL', <?php echo $subdomain_install ? 'true' : 'false'; ?>);
+@@ -414,7 +414,7 @@
+ 		$num_keys_salts = count( $keys_salts );
+ ?>
+ 	<p><?php
+-		echo _n( 'This unique authentication key is also missing from your <code>wp-config.php</code> file.', 'These unique authentication keys are also missing from your <code>wp-config.php</code> file.', $num_keys_salts ); ?> <?php _e( 'To make your installation more secure, you should also add:' ) ?></p>
++		printf( _n( 'This unique authentication key is also missing from your <code>%s</code> file.', 'These unique authentication keys are also missing from your <code>%s</code> file.', $num_keys_salts ), DEBIAN_FILE); ?> <?php _e( 'To make your installation more secure, you should also add:' ) ?></p>
+ 	<textarea class="code" readonly="readonly" cols="100" rows="<?php echo $num_keys_salts; ?>"><?php echo esc_textarea( $keys_salts_str ); ?></textarea>
+ <?php
+ 	}
