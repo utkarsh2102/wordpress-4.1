@@ -1,3 +1,16 @@
+wordpress (4.1.33+dfsg-0+deb8u1) jessie-security; urgency=high
+
+  * Non-maintainer upload by the ELTS team.
+  * New upstream version 4.7.21.
+    - One security issue affects WordPress versions b/w
+      3.7 and 5.7. If you haven’t yet updated to 5.7,
+      all WordPress versions since 3.7 have also been
+      updated to fix the following security issues:
+      - Object injection in PHPMailer.
+        (CVE-2020-36326 and CVE-2018-19296)
+
+ -- Utkarsh Gupta <utkarsh@debian.org>  Wed, 04 Aug 2021 16:09:46 +0530
+
 wordpress (4.1.32+dfsg-0+deb8u1) jessie-security; urgency=high
 
   * Non-maintainer upload by the ELTS team.
